@@ -48,14 +48,14 @@ function App() {
       <main>
         <form onChange={updateState}>
           <div className="input-group">
+            <label htmlFor="isPlanet">IsPlanet:</label>
             <input {...register("isPlanet")} type="checkbox" name="isPlanet" />
-            <label htmlFor="isPlanet">IsPlanet</label>
             <input
               {...register("gravity")}
               min="0"
               step="0.10"
               max="30"
-              type="rallnge"
+              type="range"
               name="gravity"
             />
           </div>
@@ -69,9 +69,9 @@ function App() {
               ))}
             </select>
           </div>
-          <button onSubmit={handleSubmit(updateState)}>Recherche</button>
         </form>
-        <div>
+        <div className="bodies-info">
+          <h1>Informations</h1>
           <ListBodies
             bodie={bodie.filter((bodie) => bodie.name === displayBodies)}
           />

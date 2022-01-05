@@ -35,9 +35,25 @@ const InfoBodies = (props) => {
   } = props;
   return (
     <>
-      <p>{name}</p>
-      <p>{rel}</p>
-      <p>{gravity}</p>
+      <p>
+        {name}
+        {isPlanet === true ? ` est une planète.` : ` n'est pas une planète. `}
+        {dimension}
+      </p>
+      <p>La gravité est de {gravity}g.</p>
+      <p>
+        {
+          (moons,
+          semimajorAxis,
+          perihelion,
+          aphelion,
+          eccentricity,
+          inclination,
+          mass,
+          vol,
+          density)
+        }
+      </p>
     </>
   );
 };
