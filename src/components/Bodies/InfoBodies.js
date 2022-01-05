@@ -41,19 +41,10 @@ const InfoBodies = (props) => {
         {dimension}
       </p>
       <p>La gravité est de {gravity}g.</p>
-      <p>
-        {
-          (moons,
-          semimajorAxis,
-          perihelion,
-          aphelion,
-          eccentricity,
-          inclination,
-          mass,
-          vol,
-          density)
-        }
-      </p>
+      <div className="moons">
+        {moons != null && <p>Voici les lunes : </p>}
+        {moons != null && moons.map((m) => <p key={m.moon}> {m.moon} </p>)}
+      </div>
     </>
   );
 };
